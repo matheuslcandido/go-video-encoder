@@ -9,7 +9,7 @@ import (
 )
 
 type VideoRepository interface {
-	Insert(vide *domain.Video) (*domain.Video, error)
+	Insert(video *domain.Video) (*domain.Video, error)
 	Find(id string) (*domain.Video, error)
 }
 
