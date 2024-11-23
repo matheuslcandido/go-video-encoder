@@ -73,7 +73,7 @@ func (v *VideoService) Fragment() error {
 	source := videoFilePath + ".mp4"
 	target := videoFilePath + ".frag"
 
-	cmd := exec.Command("mp4Fragment", source, target)
+	cmd := exec.Command("mp4fragment", source, target)
 	output, err := cmd.CombinedOutput()
 	if err != nil {
 		return err
