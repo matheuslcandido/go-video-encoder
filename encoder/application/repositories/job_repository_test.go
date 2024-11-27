@@ -3,7 +3,7 @@ package repositories_test
 import (
 	"encoder/application/repositories"
 	"encoder/domain"
-	database "encoder/framework"
+	database "encoder/framework/database"
 	"testing"
 	"time"
 
