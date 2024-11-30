@@ -69,9 +69,9 @@ func (j *JobManager) Start(ch *amqp.Channel) {
 
 func (j *JobManager) checkParseErrors(jobResult JobWorkerResult) error {
 	if jobResult.Job.ID != "" {
-		log.Printf("MessageID #{jobResult.Message.DelivaryTag}, Error parsing job: #{jobResult.Job.ID}")
+		log.Printf("MessageID: %v, Error parsing job: %v, Error: %v", jobResult.Message.DeliveryTag, jobResult.Job.ID, jobResult.Error)
 	} else {
-		log.Printf("MessageID #{jobResult.Message.DelivaryTag}, Error parsing message: #{jobResult.Error}")
+		log.Printf("MessageID %v, Error parsing message: %v", jobResult.Message.DeliveryTag, jobResult.Error)
 	}
 
 	errorMessage := JobNotificationError{
